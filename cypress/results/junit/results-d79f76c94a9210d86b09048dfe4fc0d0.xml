@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="20.896" tests="5" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-07-16T00:33:03" tests="0" file="cypress/e2e/tests.spec.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="First test suite" timestamp="2025-07-16T00:33:03" tests="2" time="8.197" failures="0">
+    <testcase name="First test suite 1 - Login Flow" time="3.465" classname="1 - Login Flow">
+    </testcase>
+    <testcase name="First test suite 2 - Add to Cart &amp; Delete an item" time="4.687" classname="2 - Add to Cart &amp; Delete an item">
+    </testcase>
+  </testsuite>
+  <testsuite name="3 - Negative Login Case" timestamp="2025-07-16T00:33:11" tests="1" time="1.816" failures="0">
+    <testcase name="3 - Negative Login Case Negative Login" time="1.810" classname="Negative Login">
+    </testcase>
+  </testsuite>
+  <testsuite name="4 - API Data Retrieval and UI Validation Using Public API" timestamp="2025-07-16T00:33:13" tests="1" time="3.553" failures="0">
+    <testcase name="4 - API Data Retrieval and UI Validation Using Public API Do request and retrieve data" time="3.529" classname="Do request and retrieve data">
+    </testcase>
+  </testsuite>
+  <testsuite name="5 - End-to-End Checkout with Dynamic Data Validation" timestamp="2025-07-16T00:33:16" tests="1" time="7.327" failures="0">
+    <testcase name="5 - End-to-End Checkout with Dynamic Data Validation Flow with data from fixture" time="7.303" classname="Flow with data from fixture">
+    </testcase>
+  </testsuite>
+</testsuites>
