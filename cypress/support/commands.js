@@ -23,3 +23,20 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('loginWithCredentails', (login,password) => { 
+    cy.visit('/login')
+    cy.get('[data-qa="login-email"]').type(login)
+    cy.get('[data-qa="login-password"]').type(password)
+    cy.get('[data-qa="login-button"]').click()
+})
+
+Cypress.Commands.add('searchForTheProductAndVerifyItsFound', (productName) => { 
+    cy.get('input[name="search"]').type(productName)
+    cy.get('#submit_search').click()
+    cy.get('.single-products')
+        .find('p')
+        .contains(productName)
+        .should('be.visible')
+})
+

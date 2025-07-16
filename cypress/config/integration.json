@@ -1,0 +1,8 @@
+{
+    "baseUrl":"https://automationexercise.com/",
+    "env":{
+        "email":"testIntUser@mail.com",
+        "password":"test123",
+        "userName":"testIntUser"
+    }
+}

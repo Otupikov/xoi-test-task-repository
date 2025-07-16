@@ -1,0 +1,38 @@
+# Workflow name which will be displayed on GitHub Actions UI
+name: End-to-end tests
+
+# When to run the workflow — on each push into the repository
+on: push
+
+jobs:
+  cypress-run:
+    
+    # GitHub Actions will run this job on a virtual machine with Ubuntu 24.04
+    runs-on: ubuntu-24.04
+
+    steps:
+      # Step 1: Clone the repository (files) into the runner (virtual machine)
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Step 2: Run Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+
+      # Step 3: If tests fail — upload screenshots to artifacts
+      - name: Upload screenshots
+        if: failure()  # runs only if tests failed
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-screenshots               # Artifact name
+          path: cypress/screenshots               # Path to the folder with screenshots
+          if-no-files-found: ignore               # Don’t throw error if no files found
+
+      # Step 4: Always upload videos to artifacts regardless of success/failure
+      - name: Upload videos
+        if: always()  # always runs, even if previous step failed
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-videos                    # Artifact name
+          path: cypress/videos                    # Path to the folder with videos
+          if-no-files-found: ignore               # Don’t throw error if no files found
